@@ -89,8 +89,8 @@ function checkWord(msg) {
      score = 0;
     }, 2000);
   }
-  // recog.stop();
-  // speechReload();
+  recog.stop();
+  speechReload();
 }
 
 // Generate random word
@@ -143,7 +143,7 @@ function speechReload() {
 
     recog.start();
      playAgain();
-   }, 3000)
+   }, 2000)
 }
 
 function reloadOnEnd() {
@@ -154,7 +154,7 @@ function reloadOnEnd() {
 
 
 // Recognition stops event
-recog.addEventListener('end', reloadOnEnd);
+// recog.addEventListener('end', reloadOnEnd);
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
