@@ -148,7 +148,7 @@ function speechReload() {
 function reloadOnEnd() {
   setTimeout(() => {
     recog.start();
-   }, 50)
+   }, 1000)
 }
 
 
