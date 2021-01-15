@@ -153,7 +153,7 @@ function reloadOnEnd() {
 
 
 // Recognition stops event
-recog.onend = reloadOnEnd();
+recog.addEventListener('end', reloadOnEnd);
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
