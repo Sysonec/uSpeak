@@ -152,6 +152,9 @@ function reloadOnEnd() {
 }
 
 
+// Recognition stops event
+recog.onend = reloadOnEnd();
+
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
 
@@ -161,9 +164,6 @@ difficulty.addEventListener('change', changeDiff);
 
 // Speak result
 recog.addEventListener('result', onSpeak);
-
-// Recognition stops event
-recog.addEventListener('onend', reloadOnEnd);
 
 // Generate random word when ready
 generateRandom();
