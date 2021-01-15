@@ -8,7 +8,23 @@
     <title>uSpeak</title>
   </head>
   <body>
-    <img src="img/mic.png" alt="Speak">
+
+    <!-- Micro icon -->
+    <i class="fas fa-microphone micro-ico"></i>
+
+    <div class="difficulty-container">
+      
+      <!-- Word difficulty -->
+      <div class="difficulty-setting">
+
+      <h3>Difficulty</h3>
+      <select class="difficulty" id="difficulty">
+        <option value="easy" class="easy">Easy</option>
+        <option value="medium" class="medium">Medium</option>
+        <option value="hard" class="hard">Hard</option>
+      </select>
+    </div>
+    </div>
 
     <h1>Pronounce given words</h1>
 
@@ -16,25 +32,25 @@
 
     <div class="score" id="score">Score: 0</div>
 
-    <h3>Difficulty</h3>
-
-    <!-- Word difficulty -->
-    <select class="difficulty" id="difficulty">
-      <option value="easy" class="easy">Easy</option>
-      <option value="medium" class="medium">Medium</option>
-      <option value="hard" class="hard">Hard</option>
-    </select>
-
     <!-- Random word based on difficulty -->
     <div class="random-word" id="random-word"></div>
 
     <!-- Word/s spoken displayed here -->
     <div id="message" class="message"></div>
 
+    <!-- Buttons -->
+    <div class="buttons">
+      <!-- Click to speak -->
     <button id="speak-btn" class="speak-btn">Speak</button>
 
+    <!-- Click to play voice -->
     <button id="play-voice" class="play-voice">Play voice</button>
-
+    </div>
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1e194972a8.js" crossorigin="anonymous"></script>
+    
+    <!-- JS -->
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
+/* Variables */
+
+:root {
+  --ease-in-out: cubic-bezier(0.24, 0.8, 1, 0.5);
+  --white-color: #fff;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,7 +14,7 @@
 body {
   position: relative;
   background: url("img/flags.jpg") no-repeat left center/cover;
-  color: #fff;
+  color: var(--white-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +28,7 @@ body {
 body::before {
   content: "";
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
   height: 100%;
   width: 100%;
   top: 0;
@@ -29,13 +36,18 @@ body::before {
   z-index: -1;
 }
 
-img {
+.micro-ico {
   z-index: -2;
+  font-size: 150px;
 }
 
 h1,
 h3 {
   margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 h3:nth-of-type(2) {
@@ -62,6 +74,7 @@ p {
 
 .random-word {
   margin-top: 35px;
+  color: #bcccfc;
 }
 
 .score {
@@ -86,11 +99,40 @@ p {
   padding: 10px;
 }
 
+.buttons .speak-btn {
+  margin-right: 15px;
+}
+
+.icon-change-start,
+.icon-change-stop {
+  transition: color 0.2s var(--ease-in-out);
+}
+
+.icon-change-start {
+  color: #2dcb25;
+}
+
+.icon-change-stop {
+  color: #9a0000;
+}
+
+.speak-btn,
+.play-voice {
+  transition: all 0.2s var(--ease-in-out);
+}
+
+.speak-btn:hover,
+.play-voice:hover {
+  color: #02141e;
+  background: rgba(125, 143, 154, 0.75);
+  border: 2px solid #02141e;
+}
+
 .play-voice,
 .difficulty,
 .speak-btn {
   border-radius: 6px;
-  color: #fff;
+  color: var(--white-color);
   cursor: pointer;
   outline: 0;
 }
@@ -99,24 +141,28 @@ p {
 .speak-btn {
   padding: 10px 30px;
   background: rgba(0, 0, 0, 0.75);
-  border: 2px solid #fff;
+  border: 2px solid var(--white-color);
   font-size: 1.4rem;
   margin-top: 20px;
 }
 
-.difficulty {
-  color: #fff;
+.difficulty.container {
+  position: relative;
+}
+
+.difficulty-container .difficulty-setting .difficulty {
   background: rgba(0, 0, 0, 0.5);
   font-size: 1.3rem;
   width: 200px;
   margin-top: 15px;
   padding: 5px 10px;
-  border: 2px solid #fff;
+  border: 2px solid var(--white-color);
 }
 
-.difficulty option {
-  display: flex;
-  justify-content: right;
+.difficulty-container .difficulty-setting {
+  position: absolute;
+  left: 40px;
+  top: 10px;
 }
 
 .random-word,
@@ -126,11 +172,30 @@ p {
 }
 
 @media (max-width: 700px) {
-  img {
-    width: 150px;
+  .micro-ico {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 50px;
   }
+
   h1 {
     margin-top: 0;
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons .speak-btn {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .score {
@@ -146,5 +211,13 @@ p {
 
   .play-voice {
     margin-top: 10px;
+  }
+
+  .difficulty-container .difficulty-setting {
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    margin-bottom: 20px;
   }
 }

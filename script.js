@@ -1,3 +1,4 @@
+const microIcon = document.querySelector('.micro-ico');
 const msgEl = document.getElementById('message');
 const randomWord = document.getElementById('random-word');
 const scoreEl = document.getElementById('score');
@@ -34,6 +35,8 @@ let speech = new SpeechSynthesisUtterance();
 
 // Set default lang to british english
 speech.lang = 'en-UK';
+recog.langauge = 'en-UK';
+
 
 
 // Set text 
@@ -50,12 +53,6 @@ function playVoice() {
   synth.speak(speech);
 }
 
-// Start recognition
-recog.langauge = 'en-UK';
-// recog.start();
-
-// recog.onresult = speechReload();
-
 // Capture users words
 function onSpeak(e) {
   const msg = e.results[0][0].transcript;
@@ -68,19 +65,21 @@ function onSpeak(e) {
 function displayWord(msg) {
   msgEl.innerHTML = `
     <div>You said: </div>
-    <span class="box">${msg.toLowerCase()}</span>`
+    <span class="box">${msg.toLowerCase()}</span>`;
 }
 
 
 
 // Check word
 function checkWord(msg) {
+  
   if(msg === randomWord.innerHTML) {
     // If correct
     msgEl.innerHTML += 'Correct!';
     msgEl.classList.remove('bad');
     msgEl.classList.add('good');
     calculateScore();
+
   } else {
     // If not
     msgEl.innerHTML += 'Incorrect! Try again :)';
@@ -91,8 +90,9 @@ function checkWord(msg) {
      score = 0;
     }, 2000);
   }
-  // recog.stop();
-  speechReload(); // tu sie zacina sie
+
+  // Reload speech
+  speechReload();
 }
 
 // Generate random word
@@ -143,23 +143,28 @@ function calculateScore() {
 function speechReload() {
   setTimeout(() => {
 
-    // recog.start();
      playAgain();
    }, 2000)
 }
 
-// function reloadOnEnd() {
-//   setTimeout(() => {
-//     recog.start();
-//    }, 3000)
-// }
-
+// Start speech on click and change colors
 function startSpeech() {
+  microIcon.classList.remove('icon-change-stop');
+  microIcon.classList.add('icon-change-start');
   recog.start();
 }
 
-// Recognition stops event
-// recog.addEventListener('end', reloadOnEnd);
+// When recognition ends show color
+recog.onend = function() {
+  microIcon.classList.remove('icon-change-start');
+  microIcon.classList.add('icon-change-stop');
+}
+
+// Generate random word when ready
+generateRandom();
+
+
+// Event listeners
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
@@ -170,9 +175,7 @@ difficulty.addEventListener('change', changeDiff);
 // Speak button
 speakBtn.addEventListener('click', startSpeech);
 
-
 // Speak result
 recog.addEventListener('result', onSpeak);
 
-// Generate random word when ready
-generateRandom();
+
