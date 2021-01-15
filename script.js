@@ -50,7 +50,8 @@ function playVoice() {
 }
 
 // Start recognition
-recog.continuous = true;
+recog.continuous = false;
+recog.langauge = 'en-UK';
 recog.start();
 
 // Capture users words
