@@ -50,7 +50,7 @@ function playVoice() {
 }
 
 // Start recognition
-recog.continuous = false;
+recog.continuous = true;
 recog.langauge = 'en-UK';
 recog.start();
 
@@ -73,7 +73,7 @@ function displayWord(msg) {
 
 // Check word
 function checkWord(msg) {
-  if(msg === randomWord.innerHTML) {
+  if(msg.toLowerCase() === randomWord.innerHTML) {
     // If correct
     msgEl.innerHTML += 'Correct!';
     msgEl.classList.remove('bad');
@@ -143,7 +143,7 @@ function speechReload() {
 
     recog.start();
      playAgain();
-   }, 2000)
+   }, 3000)
 }
 
 function reloadOnEnd() {
