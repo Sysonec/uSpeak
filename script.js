@@ -79,19 +79,18 @@ function checkWord(msg) {
     msgEl.classList.remove('bad');
     msgEl.classList.add('good');
     calculateScore();
-    speechReload();
   } else {
     // If not
     msgEl.innerHTML += 'Incorrect! Try again :)';
     msgEl.classList.remove('good');
     msgEl.classList.add('bad');
-    setTimeout(() => {
-     clearUI();
-     score = 0;
-    }, 2000);
-  }
-  recog.stop();
-  speechReload();
+  //   setTimeout(() => {
+  //    clearUI();
+  //    score = 0;
+  //   }, 2000);
+  // }
+  // recog.stop();
+  // speechReload();
 }
 
 // Generate random word
@@ -139,19 +138,19 @@ function calculateScore() {
 }
 
 // Reload speech synth 
-function speechReload() {
-  setTimeout(() => {
+// function speechReload() {
+//   setTimeout(() => {
 
-    recog.start();
-     playAgain();
-   }, 2000)
-}
+//     recog.start();
+//      playAgain();
+//    }, 2000)
+// }
 
-function reloadOnEnd() {
-  setTimeout(() => {
-    recog.start();
-   }, 3000)
-}
+// function reloadOnEnd() {
+//   setTimeout(() => {
+//     recog.start();
+//    }, 3000)
+// }
 
 
 // Recognition stops event
