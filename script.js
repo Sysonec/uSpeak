@@ -72,10 +72,6 @@ function displayWord(msg) {
 
 // Check word
 function checkWord(msg) {
-// Speech synth stops listening fix
-setTimeout(() => {
-  recog.start();
-}, 50);
   if(msg === randomWord.innerHTML) {
     // If correct
     msgEl.innerHTML += 'Correct!';
@@ -149,6 +145,12 @@ function speechReload() {
    }, 2000)
 }
 
+function reloadOnEnd() {
+  setTimeout(() => {
+    recog.start();
+   }, 50)
+}
+
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
@@ -159,6 +161,9 @@ difficulty.addEventListener('change', changeDiff);
 
 // Speak result
 recog.addEventListener('result', onSpeak);
+
+// Recognition stops event
+recog.addEventListener('onend', reloadOnEnd);
 
 // Generate random word when ready
 generateRandom();
