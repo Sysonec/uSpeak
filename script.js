@@ -90,7 +90,7 @@ function checkWord(msg) {
     }, 2000);
   }
   // recog.stop();
-  speechReload();
+  // speechReload();
 }
 
 // Generate random word
