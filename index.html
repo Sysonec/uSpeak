@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>uSpeak</title>
+  </head>
+  <body>
+    <img src="img/mic.png" alt="Speak">
+
+    <h1>Pronounce given words</h1>
+
+    <h3>Speak the word into your microphone to earn points!</h3>
+
+    <div class="score" id="score">Score: 0</div>
+
+    <h3>Difficulty</h3>
+
+    <!-- Word difficulty -->
+    <select class="difficulty" id="difficulty">
+      <option value="easy" class="easy">Easy</option>
+      <option value="medium" class="medium">Medium</option>
+      <option value="hard" class="hard">Hard</option>
+    </select>
+
+    <!-- Random word based on difficulty -->
+    <div class="random-word" id="random-word"></div>
+
+    <!-- Word/s spoken displayed here -->
+    <div id="message" class="message"></div>
+
+    <button id="play-voice" class="play-voice">Play voice</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
