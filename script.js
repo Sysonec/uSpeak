@@ -31,6 +31,9 @@ let recog = new window.SpeechRecognition();
 const synth = window.speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
 
+// Set default lang to british english
+speech.lang = 'en-UK';
+
 
 // Set text 
 function setTextMessage() {
@@ -141,6 +144,12 @@ function speechReload() {
      playAgain();
    }, 2000)
 }
+
+
+// Speech synth stops listening fix
+setTimeout(() => {
+  recog.start();
+}, 50);
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
