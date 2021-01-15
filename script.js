@@ -79,6 +79,7 @@ function checkWord(msg) {
     msgEl.classList.remove('bad');
     msgEl.classList.add('good');
     calculateScore();
+    speechReload();
   } else {
     // If not
     msgEl.innerHTML += 'Incorrect! Try again :)';
