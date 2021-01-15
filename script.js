@@ -84,11 +84,11 @@ function checkWord(msg) {
     msgEl.innerHTML += 'Incorrect! Try again :)';
     msgEl.classList.remove('good');
     msgEl.classList.add('bad');
-  //   setTimeout(() => {
-  //    clearUI();
-  //    score = 0;
-  //   }, 2000);
-  // }
+    setTimeout(() => {
+     clearUI();
+     score = 0;
+    }, 2000);
+  }
   // recog.stop();
   // speechReload();
 }
