@@ -91,7 +91,7 @@ function checkWord(msg) {
     }, 2000);
   }
   // recog.stop();
-  speechReload();
+  // speechReload(); // tu sie zacina sie
 }
 
 // Generate random word
