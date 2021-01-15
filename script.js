@@ -50,9 +50,11 @@ function playVoice() {
 }
 
 // Start recognition
-recog.continuous = true;
+// recog.continuous = true;
 recog.langauge = 'en-UK';
-recog.start();
+// recog.start();
+
+recog.onresult = speechReload();
 
 // Capture users words
 function onSpeak(e) {
@@ -138,13 +140,13 @@ function calculateScore() {
 }
 
 // Reload speech synth 
-// function speechReload() {
-//   setTimeout(() => {
+function speechReload() {
+  setTimeout(() => {
 
-//     recog.start();
-//      playAgain();
-//    }, 2000)
-// }
+    recog.start();
+     playAgain();
+   }, 2000)
+}
 
 // function reloadOnEnd() {
 //   setTimeout(() => {
