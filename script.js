@@ -72,6 +72,10 @@ function displayWord(msg) {
 
 // Check word
 function checkWord(msg) {
+// Speech synth stops listening fix
+setTimeout(() => {
+  recog.start();
+}, 50);
   if(msg === randomWord.innerHTML) {
     // If correct
     msgEl.innerHTML += 'Correct!';
@@ -88,7 +92,7 @@ function checkWord(msg) {
      score = 0;
     }, 2000);
   }
-  // recog.stop();
+  recog.stop();
   speechReload();
 }
 
@@ -145,11 +149,6 @@ function speechReload() {
    }, 2000)
 }
 
-
-// Speech synth stops listening fix
-setTimeout(() => {
-  recog.start();
-}, 50);
 
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
