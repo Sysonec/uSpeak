@@ -88,7 +88,7 @@ function checkWord(msg) {
      score = 0;
     }, 2000);
   }
-  recog.stop();
+  // recog.stop();
   speechReload();
 }
 
