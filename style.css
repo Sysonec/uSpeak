@@ -87,18 +87,20 @@ p {
 }
 
 .play-voice,
-.difficulty {
+.difficulty,
+.speak-btn {
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
   outline: 0;
 }
 
-.play-voice {
+.play-voice,
+.speak-btn {
   padding: 10px 30px;
   background: rgba(0, 0, 0, 0.75);
   border: 2px solid #fff;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-top: 20px;
 }
 

@@ -3,6 +3,7 @@ const randomWord = document.getElementById('random-word');
 const scoreEl = document.getElementById('score');
 const difficulty = document.getElementById('difficulty');
 const playVoiceBtn = document.getElementById('play-voice');
+const speakBtn = document.getElementById('speak-btn');
 
 // Set score
 let score = 0;
@@ -53,7 +54,7 @@ function playVoice() {
 recog.langauge = 'en-UK';
 // recog.start();
 
-recog.onresult = speechReload();
+// recog.onresult = speechReload();
 
 // Capture users words
 function onSpeak(e) {
@@ -91,7 +92,7 @@ function checkWord(msg) {
     }, 2000);
   }
   // recog.stop();
-  // speechReload(); // tu sie zacina sie
+  speechReload(); // tu sie zacina sie
 }
 
 // Generate random word
@@ -142,7 +143,7 @@ function calculateScore() {
 function speechReload() {
   setTimeout(() => {
 
-    recog.start();
+    // recog.start();
      playAgain();
    }, 2000)
 }
@@ -153,6 +154,9 @@ function speechReload() {
 //    }, 3000)
 // }
 
+function startSpeech() {
+  recog.start();
+}
 
 // Recognition stops event
 // recog.addEventListener('end', reloadOnEnd);
@@ -162,6 +166,9 @@ playVoiceBtn.addEventListener('click', playVoice)
 
 // Change difficulty
 difficulty.addEventListener('change', changeDiff);
+
+// Speak button
+speakBtn.addEventListener('click', startSpeech);
 
 
 // Speak result
