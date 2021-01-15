@@ -50,7 +50,6 @@ function playVoice() {
 }
 
 // Start recognition
-// recog.continuous = true;
 recog.langauge = 'en-UK';
 // recog.start();
 
@@ -68,14 +67,14 @@ function onSpeak(e) {
 function displayWord(msg) {
   msgEl.innerHTML = `
     <div>You said: </div>
-    <span class="box">${msg}</span>`
+    <span class="box">${msg.toLowerCase()}</span>`
 }
 
 
 
 // Check word
 function checkWord(msg) {
-  if(msg.toLowerCase() === randomWord.innerHTML) {
+  if(msg === randomWord.innerHTML) {
     // If correct
     msgEl.innerHTML += 'Correct!';
     msgEl.classList.remove('bad');
@@ -92,7 +91,7 @@ function checkWord(msg) {
     }, 2000);
   }
   // recog.stop();
-  // speechReload();
+  speechReload();
 }
 
 // Generate random word
