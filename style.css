@@ -199,14 +199,14 @@ p {
   }
 
   .score {
-    font-size: 3rem;
-    right: 0;
-    left: 0;
-    top: 40px;
+    font-size: 2.25rem;
+    right: 10px;
+    top: 15px;
   }
 
   .random-word {
     margin-top: 10px;
+    font-size: 1.8rem;
   }
 
   .play-voice {
