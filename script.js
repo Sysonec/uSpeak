@@ -152,7 +152,7 @@ function startSpeech() {
   microIcon.classList.remove('icon-change-stop');
   microIcon.classList.add('icon-change-start');
   recog.start();
-  speech.speak('Say the word');
+  synth.speak('Say the word');
 }
 
 // When recognition ends show color
