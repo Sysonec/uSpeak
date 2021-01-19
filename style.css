@@ -175,6 +175,7 @@ p {
 @media (max-width: 700px) {
   .speak-btn:hover,
   .play-voice:hover {
+    color: var(--white-color);
     padding: 10px 30px;
     background: rgba(0, 0, 0, 0.75);
     border: 2px solid var(--white-color);
