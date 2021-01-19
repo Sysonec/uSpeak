@@ -175,7 +175,11 @@ p {
 @media (hover: hover) and (pointer: fine) {
   .speak-btn:hover,
   .play-voice:hover {
-    color: red;
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid var(--white-color);
+    font-size: 1.4rem;
+    margin-top: 20px;
   }
 }
 
