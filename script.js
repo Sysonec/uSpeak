@@ -1,3 +1,4 @@
+// DOM elements
 const microIcon = document.querySelector('.micro-ico');
 const msgEl = document.getElementById('message');
 const randomWord = document.getElementById('random-word');
@@ -22,6 +23,9 @@ const wordsHard = [
   'philosophy','procrastination', 'literally','disinterested','gobbledegook','intelligence','werewolf','obscure', 'nonetheless'
 ]
 
+// Audio alert for micro
+const audio = new Audio('sound/micro.mp3');
+
 
 // Speech recognition
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -44,7 +48,6 @@ function setTextMessage() {
   speech.text = randomWord.innerHTML;
 }
 
-
 // Play voice
 function playVoice() {
   setTextMessage();
@@ -52,6 +55,7 @@ function playVoice() {
   // Speak voice
   synth.speak(speech);
 }
+
 
 // Capture users words
 function onSpeak(e) {
@@ -149,10 +153,11 @@ function speechReload() {
 
 // Start speech on click and change colors
 function startSpeech() {
+  // Play sound to alert that microphone is listening
+  audio.play();
   microIcon.classList.remove('icon-change-stop');
   microIcon.classList.add('icon-change-start');
   recog.start();
-  synth.speak('Say the word');
 }
 
 // When recognition ends show color
