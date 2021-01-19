@@ -35,7 +35,7 @@ let speech = new SpeechSynthesisUtterance();
 
 // Set default lang to british english
 speech.lang = 'en-UK';
-recog.langauge = 'en-UK';
+recog.lang = 'en-UK';
 
 
 
@@ -65,7 +65,7 @@ function onSpeak(e) {
 function displayWord(msg) {
   msgEl.innerHTML = `
     <div>You said: </div>
-    <span class="box">${msg}</span>`;
+    <span class="box">${msg.toLowerCase()}</span>`;
 }
 
 
