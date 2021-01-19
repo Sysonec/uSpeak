@@ -34,8 +34,8 @@ const synth = window.speechSynthesis;
 let speech = new SpeechSynthesisUtterance();
 
 // Set default lang to british english
-speech.lang = 'pl-PL';
-recog.lang = 'pl-PL';
+speech.lang = 'en-US';
+recog.lang = 'en-US';
 
 
 
