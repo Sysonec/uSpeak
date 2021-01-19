@@ -172,11 +172,10 @@ p {
 }
 
 /* Sticky hover on mobile devices (solution) */
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
+  .speak-btn:hover,
   .play-voice:hover {
-    color: #02141e;
-    background: rgba(125, 143, 154, 0.75);
-    border: 2px solid #02141e;
+    color: red;
   }
 }
 
