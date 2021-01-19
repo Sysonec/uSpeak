@@ -173,7 +173,6 @@ p {
 
 /* Sticky hover on mobile devices (solution) */
 @media (hover: hover) {
-  .speak-btn:hover,
   .play-voice:hover {
     color: #02141e;
     background: rgba(125, 143, 154, 0.75);
