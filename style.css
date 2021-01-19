@@ -171,8 +171,8 @@ p {
   font-size: 2.3rem;
 }
 
-/* Sticky hover on mobile devices (solution) */
-@media (hover: hover) and (pointer: fine) {
+/* Responsive design on mobile devices */
+@media (max-width: 700px) {
   .speak-btn:hover,
   .play-voice:hover {
     padding: 10px 30px;
@@ -181,9 +181,7 @@ p {
     font-size: 1.4rem;
     margin-top: 20px;
   }
-}
 
-@media (max-width: 700px) {
   .micro-ico {
     position: absolute;
     top: 10px;
