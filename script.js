@@ -65,7 +65,7 @@ function onSpeak(e) {
 function displayWord(msg) {
   msgEl.innerHTML = `
     <div>You said: </div>
-    <span class="box">${msg.toLowerCase()}</span>`;
+    <span class="box">${msg}</span>`;
 }
 
 
