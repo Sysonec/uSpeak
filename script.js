@@ -80,6 +80,8 @@ function displayWord(msg) {
 function checkWord(msg) {
   
   if(msg === randomWord.innerHTML) {
+    // Play sound if correct answer
+    audio.play();
     // If correct
     msgEl.innerHTML += 'Correct!';
     msgEl.classList.remove('bad');
@@ -156,8 +158,6 @@ function speechReload() {
 
 // Start speech on click and change colors
 function startSpeech() {
-  // Play sound to alert that microphone is listening
-  audio.play();
   microIcon.classList.remove('icon-change-stop');
   microIcon.classList.add('icon-change-start');
   recog.start();
