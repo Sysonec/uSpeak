@@ -14,15 +14,17 @@ let score = 0;
 
 // Arrays of words based on difficulty
 const wordsEasy = [
-  'hello','see', 'dog','cat','friend','milk','goat','drink', 'fine','sorry','soap','grim','old','age','fire','water'
+  'hello','see', 'dog','cat','friend','milk','goat','drink', 'fine','sorry','soap','grim','old','age','fire','water', 'elephant', 'tiger', 'whisky', 'coke', 'bubble',
+  'sword', 'colours'
 ];
 
 const wordsMedium = [
-  'timber','preaching', 'freedom','mushroom','grinding','prolonged','intuition','careless', 'custody', 'problematic', 'gross'
+  'timber','preaching', 'freedom','mushroom','grinding','prolonged','intuition','careless', 'custody', 'problematic', 'gross', 'neither', 'ntarctic', 'asterisk',
+  'brewery', 'cavalry'
 ];
 
 const wordsHard = [
-  'philosophy','procrastination', 'literally','disinterested','gobbledegook','intelligence','werewolf','obscure', 'nonetheless'
+  'philosophy','procrastination', 'defibrillator','disinterested','gobbledygook','intelligence','werewolf','obscure', 'nonetheless', 'otorhinolaryngologist', 'worcestershire', 'anathema'
 ]
 
 // Audio alert for micro
