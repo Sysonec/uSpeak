@@ -1,4 +1,6 @@
 // DOM elements
+const mainCont = document.querySelector('.main-container');
+const cssLoader = document.querySelector('.lds-roller');
 const microIcon = document.querySelector('.micro-ico');
 const msgEl = document.getElementById('message');
 const randomWord = document.getElementById('random-word');
@@ -151,6 +153,7 @@ function speechReload() {
    }, 2000)
 }
 
+
 // Start speech on click and change colors
 function startSpeech() {
   // Play sound to alert that microphone is listening
@@ -165,6 +168,12 @@ recog.onend = function() {
   microIcon.classList.remove('icon-change-start');
   microIcon.classList.add('icon-change-stop');
 }
+
+// CSS loader overlay
+setTimeout(function() {
+  mainCont.classList.remove('overlay');
+  cssLoader.remove();
+}, 3500)
 
 // Generate random word when ready
 generateRandom();
