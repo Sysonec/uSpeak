@@ -26,7 +26,8 @@ const wordsHard = [
 ]
 
 // Audio alert for micro
-const audio = new Audio('sound/micro.mp3');
+const audioGood = new Audio('sound/good.mp3');
+const audioBad = new Audio('sound/bad.mp3');
 
 
 // Speech recognition
@@ -81,7 +82,7 @@ function checkWord(msg) {
   
   if(msg === randomWord.innerHTML) {
     // Play sound if correct answer
-    audio.play();
+    audioGood.play();
     // If correct
     msgEl.innerHTML += 'Correct!';
     msgEl.classList.remove('bad');
@@ -89,6 +90,8 @@ function checkWord(msg) {
     calculateScore();
 
   } else {
+    // Play sound if incorrect answer
+    audioBad.play();
     // If not
     msgEl.innerHTML += 'Incorrect! Try again :)';
     msgEl.classList.remove('good');
