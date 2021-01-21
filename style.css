@@ -296,6 +296,8 @@ p {
   .buttons {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    margin: auto;
   }
 
   .buttons .speak-btn {
