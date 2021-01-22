@@ -31,9 +31,10 @@ const wordsHard = [
   'philosophy','procrastination', 'defibrillator','disinterested','gobbledygook','intelligence','werewolf','obscure', 'nonetheless', 'otorhinolaryngologist', 'earthquake', 'anathema'
 ]
 
-// Audio alert for micro
+// Sound alerts
 const audioGood = new Audio('sound/good.mp3');
 const audioBad = new Audio('sound/bad.mp3');
+const audioScore = new Audio('sound/score.mp3');
 
 
 // Speech recognition
@@ -190,6 +191,8 @@ function maxScoreCount() {
       <button class="play-again" id="play-again">Play again</button>
     </div>`;
     hideElements();
+    audioScore.play();
+    difficulty.disabled = true;
   }
 }
 
