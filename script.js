@@ -1,5 +1,6 @@
 // DOM elements
-const mainCont = document.querySelector('.main-container');
+const mainCont = document.getElementById('main-container');
+const wonGameCont = document.getElementById('won-game-container');
 const cssLoader = document.querySelector('.lds-roller');
 const microIcon = document.querySelector('.micro-ico');
 const msgEl = document.getElementById('message');
@@ -12,19 +13,22 @@ const speakBtn = document.getElementById('speak-btn');
 // Set score
 let score = 0;
 
+// Max score by default
+let maxScore = 5;
+
 // Arrays of words based on difficulty
 const wordsEasy = [
-  'hello','see', 'dog','cat','friend','milk','goat','drink', 'fine','sorry','soap','grim','old','age','fire','water', 'elephant', 'tiger', 'whisky', 'coke', 'bubble',
-  'sword', 'colours'
+  'hello','see', 'dog','cat','friend','milk','goat','drink', 'fine','sorry','soap','firm','old','age','fire','water', 'elephant', 'tiger', 'whiskey', 'room', 'bubble',
+  'sword', 'wheels'
 ];
 
 const wordsMedium = [
-  'timber','preaching', 'freedom','mushroom','grinding','prolonged','intuition','careless', 'custody', 'problematic', 'gross', 'neither', 'ntarctic', 'asterisk',
-  'brewery', 'cavalry'
+  'timber','preaching', 'freedom','mushroom','grinding','prolonged','intuition','careless', 'custody', 'problematic', 'gross', 'neither', 'antarctic', 'chainmail',
+  'horizon', 'cavalry'
 ];
 
 const wordsHard = [
-  'philosophy','procrastination', 'defibrillator','disinterested','gobbledygook','intelligence','werewolf','obscure', 'nonetheless', 'otorhinolaryngologist', 'worcestershire', 'anathema'
+  'philosophy','procrastination', 'defibrillator','disinterested','gobbledygook','intelligence','werewolf','obscure', 'nonetheless', 'otorhinolaryngologist', 'earthquake', 'anathema'
 ]
 
 // Audio alert for micro
@@ -90,7 +94,7 @@ function checkWord(msg) {
     msgEl.classList.remove('bad');
     msgEl.classList.add('good');
     calculateScore();
-
+    maxScoreCount();
   } else {
     // Play sound if incorrect answer
     audioBad.play();
@@ -100,7 +104,6 @@ function checkWord(msg) {
     msgEl.classList.add('bad');
     setTimeout(() => {
      clearUI();
-     score = 0;
     }, 2000);
   }
 
@@ -113,15 +116,19 @@ function generateRandom() {
   if(difficulty.value === 'easy') {
     const randomize = wordsEasy[Math.floor(Math.random() * wordsEasy.length)];
     randomWord.innerHTML += randomize; 
+    maxScore = 5;
 
   } else if(difficulty.value === 'medium') {
     const randomize = wordsMedium[Math.floor(Math.random() * wordsMedium.length)];
     randomWord.innerHTML += randomize;
+    maxScore = 7;
 
   } else if(difficulty.value === 'hard') {
     const randomize = wordsHard[Math.floor(Math.random() * wordsHard.length)];
     randomWord.innerHTML += randomize;
+    maxScore = 10;
   } 
+  scoreEl.innerHTML = `Score: ${score} / ${maxScore}`;
 }
 
 // Play again
@@ -143,12 +150,12 @@ function clearUI() {
   randomWord.innerHTML = '';
   msgEl.innerHTML = '';
   generateRandom();
-  scoreEl.innerHTML = `Score: ${score = 0}`
+  scoreEl.innerHTML = `Score: ${score = 0} / ${maxScore}`
 }
 
 // Calculate score
 function calculateScore() {
-  scoreEl.innerHTML = `Score: ${score + 1}`;
+  scoreEl.innerHTML = `Score: ${score + 1} / ${maxScore}`;
   score++;
 }
 
@@ -174,6 +181,32 @@ recog.onend = function() {
   microIcon.classList.add('icon-change-stop');
 }
 
+// Max score count
+function maxScoreCount() {
+  if(score === maxScore) {
+    wonGameCont.innerHTML += `
+    <div class="won-game" id="won-game">
+      <h3>Congratulations you won, your score is <span class="score-highlight"> ${score} / ${maxScore}</span></h3>
+      <button class="play-again" id="play-again">Play again</button>
+    </div>`;
+    hideElements();
+  }
+}
+
+// Play again
+function playAgainBtn(e) {
+if(e.target.id === 'play-again') {
+  window.location.reload();
+}
+}
+
+// Hide elements when score is reached
+function hideElements() {
+  speakBtn.className = "hide-el";
+  playVoiceBtn.className = "hide-el";
+  randomWord.className = 'hide-el';
+}
+
 // CSS loader overlay
 setTimeout(function() {
   mainCont.classList.remove('overlay');
@@ -183,9 +216,7 @@ setTimeout(function() {
 // Generate random word when ready
 generateRandom();
 
-
 // Event listeners
-
 // Play voice 
 playVoiceBtn.addEventListener('click', playVoice)
 
@@ -198,4 +229,5 @@ speakBtn.addEventListener('click', startSpeech);
 // Speak result
 recog.addEventListener('result', onSpeak);
 
-
+// Play again button
+wonGameCont.addEventListener('click' , playAgainBtn);

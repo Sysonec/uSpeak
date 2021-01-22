@@ -58,14 +58,6 @@ p {
   margin: 0;
 }
 
-.play-again {
-  padding: 8px 15px;
-  border: 0;
-  background: #f4f4f4;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
 .message {
   font-weight: bold;
   font-size: 1.4rem;
@@ -84,7 +76,17 @@ p {
   font-size: 4rem;
 }
 
-.good {
+/* Hide elements */
+.hide-el {
+  display: none;
+}
+
+.score-highlight {
+  font-size: 1.8rem;
+}
+
+.good,
+.score-highlight {
   color: #3dc936;
 }
 
@@ -95,8 +97,9 @@ p {
 .box {
   border: 1px solid #dedede;
   display: block;
-  margin: 20px;
+  margin: 20px auto 20px auto;
   padding: 10px;
+  width: 200px;
 }
 
 .buttons .speak-btn {
@@ -211,12 +214,14 @@ p {
 }
 
 .speak-btn,
-.play-voice {
+.play-voice,
+.play-again {
   transition: all 0.2s var(--ease-in-out);
 }
 
 .speak-btn:hover,
-.play-voice:hover {
+.play-voice:hover,
+.play-again:hover {
   color: #02141e;
   background: rgba(125, 143, 154, 0.75);
   border: 2px solid #02141e;
@@ -224,7 +229,8 @@ p {
 
 .play-voice,
 .difficulty,
-.speak-btn {
+.speak-btn,
+.play-again {
   border-radius: 6px;
   color: var(--white-color);
   cursor: pointer;
@@ -232,7 +238,8 @@ p {
 }
 
 .play-voice,
-.speak-btn {
+.speak-btn,
+.play-again {
   padding: 10px 30px;
   background: rgba(0, 0, 0, 0.75);
   border: 2px solid var(--white-color);
@@ -275,6 +282,10 @@ p {
     border: 2px solid var(--white-color);
     font-size: 1.4rem;
     margin-top: 20px;
+  }
+
+  .score-highlight {
+    font-size: 1.6rem;
   }
 
   .micro-ico {

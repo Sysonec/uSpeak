@@ -11,7 +11,7 @@
     <!-- CSS loader -->
     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-    <div class="main-container overlay">
+    <div class="main-container overlay" id="main-container">
       <!-- Micro icon -->
     <i class="fas fa-microphone micro-ico"></i>
 
@@ -39,15 +39,18 @@
     <div class="random-word" id="random-word"></div>
 
     <!-- Word/s spoken displayed here -->
-    <div id="message" class="message"></div>
+    <div class="message" id="message"></div>
+
+    <!-- Won game -->
+    <div class="won-game-container" id="won-game-container"></div>
 
     <!-- Buttons -->
     <div class="buttons">
       <!-- Click to speak -->
-    <button id="speak-btn" class="speak-btn">Speak <i class="fas fa-microphone"></i></button>
+    <button class="speak-btn" id="speak-btn">Speak <i class="fas fa-microphone"></i></button>
 
     <!-- Click to play voice -->
-    <button id="play-voice" class="play-voice">Play voice <i class="fas fa-volume-up"></i></button>
+    <button class="play-voice" id="play-voice">Play voice <i class="fas fa-volume-up"></i></button>
     </div>
     </div>
   
