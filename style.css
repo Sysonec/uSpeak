@@ -135,6 +135,7 @@ p {
   height: 80px;
 }
 .lds-roller div {
+  -webkit-animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   transform-origin: 40px 40px;
 }
@@ -149,6 +150,7 @@ p {
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
+  -webkit-animation-delay: -0.036s;
   animation-delay: -0.036s;
 }
 .lds-roller div:nth-child(1):after {
@@ -156,6 +158,7 @@ p {
   left: 63px;
 }
 .lds-roller div:nth-child(2) {
+  -webkit-animation-delay: -0.072s;
   animation-delay: -0.072s;
 }
 .lds-roller div:nth-child(2):after {
@@ -163,6 +166,7 @@ p {
   left: 56px;
 }
 .lds-roller div:nth-child(3) {
+  -webkit-animation-delay: -0.108s;
   animation-delay: -0.108s;
 }
 .lds-roller div:nth-child(3):after {
@@ -170,6 +174,7 @@ p {
   left: 48px;
 }
 .lds-roller div:nth-child(4) {
+  -webkit-animation-delay: -0.144s;
   animation-delay: -0.144s;
 }
 .lds-roller div:nth-child(4):after {
@@ -177,6 +182,7 @@ p {
   left: 40px;
 }
 .lds-roller div:nth-child(5) {
+  -webkit-animation-delay: -0.18s;
   animation-delay: -0.18s;
 }
 .lds-roller div:nth-child(5):after {
@@ -184,6 +190,7 @@ p {
   left: 32px;
 }
 .lds-roller div:nth-child(6) {
+  -webkit-animation-delay: -0.216s;
   animation-delay: -0.216s;
 }
 .lds-roller div:nth-child(6):after {
@@ -191,6 +198,7 @@ p {
   left: 24px;
 }
 .lds-roller div:nth-child(7) {
+  -webkit-animation-delay: -0.252s;
   animation-delay: -0.252s;
 }
 .lds-roller div:nth-child(7):after {
@@ -198,11 +206,20 @@ p {
   left: 17px;
 }
 .lds-roller div:nth-child(8) {
+  -webkit-animation-delay: -0.288s;
   animation-delay: -0.288s;
 }
 .lds-roller div:nth-child(8):after {
   top: 56px;
   left: 12px;
+}
+@-webkit-keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes lds-roller {
   0% {
@@ -273,7 +290,7 @@ p {
 }
 
 /* Responsive design on mobile devices */
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .speak-btn:hover,
   .play-voice:hover {
     color: var(--white-color);
@@ -292,7 +309,7 @@ p {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 50px;
+    font-size: 40px;
   }
 
   h1 {
@@ -348,5 +365,11 @@ p {
     left: 0;
     top: 0;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .micro-ico {
+    font-size: 85px;
   }
 }
