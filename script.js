@@ -100,6 +100,7 @@ function clearRandom() {
 const audioGood = new Audio("sound/good.mp3");
 const audioBad = new Audio("sound/bad.mp3");
 const audioScore = new Audio("sound/score.mp3");
+const audioClock = new Audio("sound/clock.mp3");
 
 // Speech recognition
 window.SpeechRecognition =
@@ -196,11 +197,17 @@ function generateRandom() {
 let timeInSeconds = 11;
 // Timer on
 function timerOn() {
+  timerBtn.classList.add("non-clickable");
   const timeInter = setInterval(() => {
     timeInSeconds--;
     timeEl.innerHTML = `Time left: ${timeInSeconds}`;
 
+    if (timeInSeconds <= 3) {
+      audioClock.play();
+    }
+
     if (timeInSeconds <= 0) {
+      audioClock.pause();
       clearInterval(timeInter);
       timeEl.innerHTML = "Time out! Try again =)";
       setTimeout(() => {
@@ -209,6 +216,7 @@ function timerOn() {
       timeInSeconds = 11;
       // Reset score when time runs out
       resetScore();
+      timerBtn.classList.remove("non-clickable");
     }
   }, 1000);
 }
