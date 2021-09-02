@@ -5,58 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>weSpeak</title>
+    <title>uSpeak</title>
   </head>
   <body>
     <!-- CSS loader -->
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
     <div class="main-container overlay" id="main-container">
       <!-- Micro icon -->
-    <i class="fas fa-microphone micro-ico"></i>
+      <i class="fas fa-microphone micro-ico"></i>
 
-    <div class="difficulty-container">
-      
-      <!-- Word difficulty -->
-      <div class="difficulty-setting">
+      <div class="difficulty-container">
+        <!-- Word difficulty -->
+        <div class="difficulty-setting">
+          <h3>Difficulty</h3>
+          <select class="difficulty" id="difficulty">
+            <option value="easy" class="easy">Easy</option>
+            <option value="medium" class="medium">Medium</option>
+            <option value="hard" class="hard">Hard</option>
+          </select>
+        </div>
+      </div>
 
-      <h3>Difficulty</h3>
-      <select class="difficulty" id="difficulty">
-        <option value="easy" class="easy">Easy</option>
-        <option value="medium" class="medium">Medium</option>
-        <option value="hard" class="hard">Hard</option>
-      </select>
+      <h1>Pronounce given words</h1>
+
+      <h3>Speak the word into your microphone to earn points!</h3>
+
+      <div class="score" id="score">Score: 0</div>
+      <div class="time" id="time">Time left: 0</div>
+
+      <!-- Random word based on difficulty -->
+      <div class="random-word" id="random-word"></div>
+
+      <!-- Word/s spoken displayed here -->
+      <div class="message" id="message"></div>
+
+      <!-- Won game -->
+      <div class="won-game-container" id="won-game-container"></div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <!-- Click to speak -->
+        <button class="speak-btn" id="speak-btn">
+          Speak <i class="fas fa-microphone"></i>
+        </button>
+
+        <!-- Click to play voice -->
+        <button class="play-voice" id="play-voice">
+          Play voice <i class="fas fa-volume-up"></i>
+        </button>
+
+        <!-- Click to randomize words -->
+        <button class="randomize-words" id="randomize-words">
+          Randomize <i class="fas fa-question"></i>
+        </button>
+
+        <!-- Click to turn on timer -->
+        <button class="diff-timer" id="diff-timer">
+          Timer <i class="fas fa-clock"></i>
+        </button>
+      </div>
     </div>
-    </div>
 
-    <h1>Pronounce given words</h1>
-
-    <h3>Speak the word into your microphone to earn points!</h3>
-
-    <div class="score" id="score">Score: 0</div>
-
-    <!-- Random word based on difficulty -->
-    <div class="random-word" id="random-word"></div>
-
-    <!-- Word/s spoken displayed here -->
-    <div class="message" id="message"></div>
-
-    <!-- Won game -->
-    <div class="won-game-container" id="won-game-container"></div>
-
-    <!-- Buttons -->
-    <div class="buttons">
-      <!-- Click to speak -->
-    <button class="speak-btn" id="speak-btn">Speak <i class="fas fa-microphone"></i></button>
-
-    <!-- Click to play voice -->
-    <button class="play-voice" id="play-voice">Play voice <i class="fas fa-volume-up"></i></button>
-    </div>
-    </div>
-  
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/1e194972a8.js" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://kit.fontawesome.com/1e194972a8.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- JS -->
     <script src="script.js"></script>
   </body>
