@@ -345,9 +345,10 @@ p {
 
   .buttons {
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: auto;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    right: 0;
   }
 
   .play-voice,
@@ -355,13 +356,26 @@ p {
   .speak-btn,
   .randomize-words,
   .diff-timer {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     width: 100%;
+    margin: 0;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  .buttons i {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.6rem;
+  }
+
+  .diff-timer {
+    border-right: none;
   }
 
   .buttons .speak-btn {
     margin-right: 0;
-    margin-bottom: 10px;
   }
 
   .score,
@@ -390,10 +404,6 @@ p {
     font-size: 1.8rem;
   }
 
-  .play-voice {
-    margin-top: 10px;
-  }
-
   .difficulty-container .difficulty-setting {
     position: relative;
     right: 0;
@@ -409,7 +419,7 @@ p {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .micro-ico {
     font-size: 65px;
   }
@@ -430,7 +440,11 @@ p {
   .randomize-words,
   .diff-timer,
   .play-again {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+  }
+
+  .buttons i {
+    font-size: 1.4rem;
   }
 
   .score-highlight {
@@ -438,5 +452,39 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .play-voice,
+  .difficulty,
+  .speak-btn,
+  .randomize-words,
+  .diff-timer,
+  .play-again {
+    font-size: 1.1rem;
+    padding: 5px 6px;
+  }
+
+  .buttons i {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .play-voice,
+  .difficulty,
+  .speak-btn,
+  .randomize-words,
+  .diff-timer,
+  .play-again {
+    font-size: 1.1rem;
+    padding: 3px 3px;
+  }
+
+  .buttons i {
+    font-size: 1.1rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }

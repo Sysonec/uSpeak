@@ -19,6 +19,9 @@ let score = 0;
 // Difficulty by default
 difficulty.value === "easy";
 
+// Set time
+let timeInSeconds = 10;
+
 // Set HTML score
 function setElScore() {
   scoreEl.innerHTML = `Score: ${score} / ${maxScore}`;
@@ -162,7 +165,7 @@ function checkWord(msg) {
     // Play sound if incorrect answer
     audioBad.play();
     // If not
-    msgEl.innerHTML += "Incorrect! Try again :)";
+    msgEl.innerHTML += "Incorrect! Try again =)";
     msgEl.classList.remove("good");
     msgEl.classList.add("bad");
     setTimeout(() => {
@@ -193,8 +196,6 @@ function generateRandom() {
   setElScore();
 }
 
-// Set time
-let timeInSeconds = 11;
 // Timer on
 function timerOn() {
   timerBtn.classList.add("non-clickable");
@@ -212,7 +213,7 @@ function timerOn() {
       timeEl.innerHTML = "Time out! Try again =)";
       setTimeout(() => {
         timeEl.innerHTML = "Time left: 0";
-      }, 1500);
+      }, 2000);
       timeInSeconds = 11;
       // Reset score when time runs out
       resetScore();
