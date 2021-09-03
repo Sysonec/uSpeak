@@ -72,7 +72,7 @@ p {
 .score,
 .time {
   position: absolute;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .score {
@@ -318,9 +318,17 @@ p {
 }
 
 /* Responsive design on mobile devices */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .main-container {
+    height: 100%;
+    margin-bottom: 5rem;
+  }
   .score-highlight {
     font-size: 1.6rem;
+  }
+
+  div .random-word {
+    font-size: 1.5rem;
   }
 
   .micro-ico {
@@ -340,7 +348,9 @@ p {
   }
 
   .box {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 
   .buttons {
@@ -356,7 +366,7 @@ p {
   .speak-btn,
   .randomize-words,
   .diff-timer {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     width: 100%;
     margin: 0;
     border-bottom: none;
@@ -366,7 +376,7 @@ p {
   }
 
   .buttons i {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .diff-timer {
@@ -380,7 +390,7 @@ p {
   .score,
   .time {
     right: 0;
-    font-size: 2rem;
+    font-size: 1.7rem;
     background-color: rgba(0, 0, 0, 0.65);
     z-index: 10;
     width: 35%;
@@ -395,7 +405,7 @@ p {
   }
 
   .time {
-    top: 40px;
+    top: 35px;
   }
 
   .random-word {
@@ -437,8 +447,7 @@ p {
   .difficulty,
   .speak-btn,
   .randomize-words,
-  .diff-timer,
-  .play-again {
+  .diff-timer {
     font-size: 1.2rem;
   }
 
@@ -459,8 +468,7 @@ p {
   .difficulty,
   .speak-btn,
   .randomize-words,
-  .diff-timer,
-  .play-again {
+  .diff-timer {
     font-size: 1.1rem;
     padding: 5px 6px;
   }
@@ -485,8 +493,7 @@ p {
   .difficulty,
   .speak-btn,
   .randomize-words,
-  .diff-timer,
-  .play-again {
+  .diff-timer {
     font-size: 1.1rem;
     padding: 3px 3px;
   }

@@ -128,7 +128,7 @@ function setTextMessage() {
 // Play voice
 function playVoice() {
   // Stop recognition while voice playing to avoid score cheating
-  recog.stop();
+  // recog.stop();
   setTextMessage();
 
   // Speak voice
