@@ -345,7 +345,7 @@ p {
 
   .buttons {
     display: flex;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -362,11 +362,10 @@ p {
     border-bottom: none;
     border-left: none;
     border-radius: 0;
+    padding: 10px 10px;
   }
 
   .buttons i {
-    display: block;
-    margin-top: 10px;
     font-size: 1.6rem;
   }
 
@@ -468,6 +467,16 @@ p {
 
   .buttons i {
     font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .buttons i {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
