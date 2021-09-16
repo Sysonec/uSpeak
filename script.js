@@ -8,6 +8,7 @@ const randomWord = document.getElementById("random-word");
 const scoreEl = document.getElementById("score");
 let timeEl = document.getElementById("time");
 const difficulty = document.getElementById("difficulty");
+const restartGameBtn = document.getElementById("restart-game");
 const playVoiceBtn = document.getElementById("play-voice");
 const speakBtn = document.getElementById("speak-btn");
 const randomizeBtn = document.getElementById("randomize-words");
@@ -20,7 +21,7 @@ let score = 0;
 difficulty.value === "easy";
 
 // Set time
-let timeInSeconds = 10;
+let timeInSeconds = 11;
 
 // Set HTML score
 function setElScore() {
@@ -161,6 +162,7 @@ function checkWord(msg) {
     msgEl.classList.add("good");
     calculateScore();
     maxScoreCount();
+    timerOff();
   } else {
     // Play sound if incorrect answer
     audioBad.play();
@@ -168,6 +170,8 @@ function checkWord(msg) {
     msgEl.innerHTML += "Incorrect! Try again =)";
     msgEl.classList.remove("good");
     msgEl.classList.add("bad");
+    timerBtn.classList.remove("non-clickable");
+    wrongAnsTimer();
     setTimeout(() => {
       clearUI();
     }, 2000);
@@ -196,6 +200,23 @@ function generateRandom() {
   setElScore();
 }
 
+// Hide score and time
+function hideScoreTime() {
+  scoreEl.style.display = "none";
+  timeEl.style.display = "none";
+}
+
+// Wrong answer timer
+function wrongAnsTimer() {
+  timeInSeconds = 0;
+  audioClock.pause();
+}
+
+// Timer off
+function timerOff() {
+  timeInSeconds = 10;
+}
+
 // Timer on
 function timerOn() {
   timerBtn.classList.add("non-clickable");
@@ -210,11 +231,11 @@ function timerOn() {
     if (timeInSeconds <= 0) {
       audioClock.pause();
       clearInterval(timeInter);
-      timeEl.innerHTML = "Time out! Try again =)";
+      timeEl.innerHTML = "Try again =)";
       setTimeout(() => {
         timeEl.innerHTML = "Time left: 0";
+        timeInSeconds = 11;
       }, 2000);
-      timeInSeconds = 11;
       // Reset score when time runs out
       resetScore();
       timerBtn.classList.remove("non-clickable");
@@ -278,6 +299,7 @@ function maxScoreCount() {
       <button class="play-again" id="play-again">Play again</button>
     </div>`;
     hideElements();
+    hideScoreTime();
     audioScore.play();
     difficulty.disabled = true;
   }
@@ -289,10 +311,15 @@ function randomizeWords() {
   generateRandom();
 }
 
+// Refresh game
+function refreshGame() {
+  window.location.reload();
+}
+
 // Play again
 function playAgainBtn(e) {
   if (e.target.id === "play-again") {
-    window.location.reload();
+    refreshGame();
   }
 }
 
@@ -325,6 +352,9 @@ playVoiceBtn.addEventListener("click", playVoice);
 
 // Change difficulty
 difficulty.addEventListener("change", changeDiff);
+
+// Restart game
+restartGameBtn.addEventListener("click", refreshGame);
 
 // Reset score when difficulty changed
 difficulty.addEventListener("change", resetScore);

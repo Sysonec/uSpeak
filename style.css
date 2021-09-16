@@ -250,11 +250,33 @@ p {
   pointer-events: none;
 }
 
+.restart-game {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  outline: 0;
+  display: block;
+  margin: 20px auto;
+}
+
+.restart-game:hover {
+  color: #3dc936;
+  background-color: #fff;
+}
+
+.restart-game i {
+  padding: 10px 6px;
+  font-size: 3.3rem;
+}
+
 .speak-btn,
 .play-voice,
 .randomize-words,
 .diff-timer,
-.play-again {
+.play-again,
+.restart-game {
   transition: all 0.2s var(--ease-in-out);
 }
 
@@ -425,6 +447,10 @@ p {
 @media (max-width: 1300px) {
   .micro-ico {
     font-size: 85px;
+  }
+
+  .restart-game i {
+    font-size: 1.5rem;
   }
 }
 
