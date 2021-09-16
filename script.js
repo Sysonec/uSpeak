@@ -171,7 +171,7 @@ function checkWord(msg) {
     msgEl.classList.remove("good");
     msgEl.classList.add("bad");
     timerBtn.classList.remove("non-clickable");
-    wrongAnsTimer();
+    resetAnsTimer();
     setTimeout(() => {
       clearUI();
     }, 2000);
@@ -206,8 +206,8 @@ function hideScoreTime() {
   timeEl.style.display = "none";
 }
 
-// Wrong answer timer
-function wrongAnsTimer() {
+// Reset answer timer
+function resetAnsTimer() {
   timeInSeconds = 0;
   audioClock.pause();
 }
@@ -301,7 +301,12 @@ function maxScoreCount() {
     hideElements();
     hideScoreTime();
     audioScore.play();
+    audioClock.pause();
     difficulty.disabled = true;
+
+    setTimeout(() => {
+      refreshGame();
+    }, 6500);
   }
 }
 
@@ -330,6 +335,7 @@ function hideElements() {
   randomWord.className = "hide-el";
   randomizeBtn.className = "hide-el";
   timerBtn.className = "hide-el";
+  restartGameBtn.className = "hide-el";
 }
 
 // Hide elements while loading
