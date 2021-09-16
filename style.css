@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+/* Remove border on mobile */
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
   position: relative;
   background: url("img/flags.jpg") no-repeat left center/cover;
@@ -161,7 +166,7 @@ p {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--white-color);
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
@@ -252,9 +257,9 @@ p {
 
 .restart-game {
   background-color: rgba(0, 0, 0, 0.8);
-  border: 4px solid #fff;
+  border: 4px solid var(--white-color);
   border-radius: 50%;
-  color: #fff;
+  color: var(--white-color);
   cursor: pointer;
   outline: 0;
   display: block;
@@ -263,7 +268,7 @@ p {
 
 .restart-game:hover {
   color: #3dc936;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .restart-game i {
